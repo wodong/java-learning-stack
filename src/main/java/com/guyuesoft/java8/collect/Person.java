@@ -5,14 +5,28 @@ public class Person {
 	private String name;
 	private int weight;
 	private boolean isMale;
+	private String education;
 	
 	
-	public Person(String name, int weight, boolean isMale) {
+	public Person(String name, int weight, boolean isMale,String education) {
 		super();
 		this.name = name;
 		this.weight = weight;
 		this.isMale=isMale;
+		this.education=education;
 	}
+	
+	
+	public String getEducation() {
+		return education;
+	}
+
+
+	public void setEducation(String education) {
+		this.education = education;
+	}
+
+
 	public String getName() {
 		return name;
 	}
@@ -29,7 +43,7 @@ public class Person {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return name+" : "+ weight +" KG "+(isMale?", ÄÐ":", Å®");
+		return name+" : "+ weight +" KG "+(isMale?", ÄÐ":", Å®")+ ", "+education;
 	}
 	
 	public boolean isOverweight() {
