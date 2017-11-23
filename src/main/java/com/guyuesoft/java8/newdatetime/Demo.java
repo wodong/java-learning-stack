@@ -49,8 +49,10 @@ public class Demo {
 		LocalDateTime dateTime1= LocalDateTime.parse("2015-10-10T15:15:00");
 		System.out.println("dateTime1: "+dateTime1);
 		//DateTimeFormatter线程安全
+		
 		LocalDateTime dateTime2= LocalDateTime.parse("2015-10-10 15:15:01",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 		System.out.println("dateTime2: "+dateTime2.format(DateTimeFormatter.ISO_DATE_TIME));
+		
 		//
 		ZonedDateTime zonedDateTime= dateTime1.atZone(TimeZone.getDefault().toZoneId());
 		System.out.println("zonedDateTime: "+zonedDateTime);
