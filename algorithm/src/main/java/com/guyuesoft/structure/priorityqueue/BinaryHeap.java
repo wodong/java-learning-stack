@@ -1,6 +1,6 @@
 package com.guyuesoft.structure.priorityqueue;
 
-import java.util.Arrays;
+
 
 /**
  * @ADT abstract data type 抽象数据类型

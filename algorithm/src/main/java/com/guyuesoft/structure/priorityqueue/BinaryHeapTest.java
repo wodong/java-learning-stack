@@ -1,9 +1,7 @@
 package com.guyuesoft.structure.priorityqueue;
 
+import java.util.List;
 import java.util.PriorityQueue;
-import java.util.stream.IntStream;
-
-import com.sun.tools.javac.util.List;
 
 public class BinaryHeapTest {
 
@@ -65,7 +63,7 @@ public class BinaryHeapTest {
 		Integer[] data = { 10, 3, 5, 12, 44, 9 };
 		//此默认为最小堆
 		PriorityQueue<Integer> queue= new PriorityQueue();
-		queue.addAll(List.from(data));
+		queue.addAll(List.of(data));
 		while (!queue.isEmpty()) {
 			int item = queue.poll();
 			log("当前删除的最小值 : " + item + " , 剩余堆 : " + queue);
