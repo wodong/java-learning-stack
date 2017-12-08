@@ -2,11 +2,27 @@ package com.guyuesoft.structure.priorityqueue;
 
 import java.util.Arrays;
 
-/*
- * ADT abstract data type 抽象数据类型
- * Priority queue 优先队列
- * insert(enqueue) , deleteMax(extractMax,dequeue)
- * 最大堆实现
+/**
+ * @ADT abstract data type 抽象数据类型
+ * @PriorityQueue 优先队列
+ * 
+ * @KeyMethod :
+ *   insert(enqueue) , deleteMax(extractMax,dequeue)
+ *   
+ * @最大二叉堆实现核心算法（2-堆） : 
+ *   1. 向上过滤 : 用在插入方法。将元素放在最后，通过上浮的方式确定其位置
+ *   2. 向下过滤 : 用在删除最大值或堆排序中。
+ *   	1）删除最大值后，将最后一个节点置于堆顶，通过和两个子节点的最大值比较，依次下沉，确定其位置
+ *   	2）对于堆排序，从第n/2个节点到根节点，依次向下过滤每个元素，最后得到堆。
+ *   
+ * @TODO 应用扩展
+ * 
+ *   1. d-堆  每个节点有d个孩子
+ *   2. 最大最小堆
+ *   3. 两个堆的合并(merge)
+ *   4. 左式堆(leftist heap)
+ *   5. 斜堆（skew heap)
+ *   6. 二项队列(binomial queue)
  */
 public class BinaryHeap<AnyType extends Comparable<? super AnyType>> {
 
@@ -36,7 +52,7 @@ public class BinaryHeap<AnyType extends Comparable<? super AnyType>> {
 	}
 
 	/**
-	 * 采用递归方式或者循环加动态步长方式初始化
+	 * 采用递归方式或者迭代（循环加动态步长）方式初始化
 	 * 
 	 * @param items
 	 * @param useRecurse
@@ -92,7 +108,7 @@ public class BinaryHeap<AnyType extends Comparable<? super AnyType>> {
 	}
 
 	/**
-	 * （最优解） 采用循环加动态步长方式(下滤)
+	 * （最优解） 采用迭代（循环加动态步长）方式(下滤)
 	 * 
 	 * @param hole
 	 */
@@ -122,7 +138,7 @@ public class BinaryHeap<AnyType extends Comparable<? super AnyType>> {
 	}
 
 	/**
-	 * （最优解）采用循环加动态步长的方式实现插入
+	 * （最优解）采用迭代（循环加动态步长）的方式实现插入
 	 * 
 	 * @param x
 	 */
